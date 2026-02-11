@@ -54,11 +54,11 @@ EOT
     db_servers                      = list(string)
     cpu_core_count                  = number
     license_model                   = string
-    scan_listener_port_tcp          = optional(number, 1521)
+    scan_listener_port_tcp          = optional(number) # Default: 1521
     tags                            = optional(map(string))
     system_version                  = optional(string)
     sparse_diskgroup_enabled        = optional(bool)
-    scan_listener_port_tcp_ssl      = optional(number, 2484)
+    scan_listener_port_tcp_ssl      = optional(number) # Default: 2484
     memory_size_in_gbs              = optional(number)
     backup_subnet_cidr              = optional(string)
     domain                          = optional(string)
