@@ -40,7 +40,7 @@ resource "azurerm_oracle_cloud_vm_cluster" "oracle_cloud_vm_clusters" {
   }
 
   dynamic "file_system_configuration" {
-    for_each = each.value.file_system_configuration != null ? [each.value.file_system_configuration] : []
+    for_each = each.value.file_system_configuration != null ? each.value.file_system_configuration : []
     content {
       mount_point = file_system_configuration.value.mount_point
       size_in_gb  = file_system_configuration.value.size_in_gb

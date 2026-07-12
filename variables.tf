@@ -74,10 +74,10 @@ EOT
       health_monitoring_enabled  = optional(bool)
       incident_logs_enabled      = optional(bool)
     }))
-    file_system_configuration = optional(object({
+    file_system_configuration = optional(list(object({
       mount_point = optional(string)
       size_in_gb  = optional(number)
-    }))
+    })))
   }))
 }
 
