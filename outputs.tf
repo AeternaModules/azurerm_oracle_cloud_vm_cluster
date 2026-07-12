@@ -1,3 +1,7 @@
+output "oracle_cloud_vm_clusters_id" {
+  description = "Map of id values across all oracle_cloud_vm_clusters, keyed the same as var.oracle_cloud_vm_clusters"
+  value       = { for k, v in azurerm_oracle_cloud_vm_cluster.oracle_cloud_vm_clusters : k => v.id }
+}
 output "oracle_cloud_vm_clusters_backup_subnet_cidr" {
   description = "Map of backup_subnet_cidr values across all oracle_cloud_vm_clusters, keyed the same as var.oracle_cloud_vm_clusters"
   value       = { for k, v in azurerm_oracle_cloud_vm_cluster.oracle_cloud_vm_clusters : k => v.backup_subnet_cidr }
