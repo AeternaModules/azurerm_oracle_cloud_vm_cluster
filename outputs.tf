@@ -20,7 +20,7 @@ output "oracle_cloud_vm_clusters_cpu_core_count" {
 }
 output "oracle_cloud_vm_clusters_data_collection_options" {
   description = "Map of data_collection_options values across all oracle_cloud_vm_clusters, keyed the same as var.oracle_cloud_vm_clusters"
-  value       = { for k, v in azurerm_oracle_cloud_vm_cluster.oracle_cloud_vm_clusters : k => v.data_collection_options if v.data_collection_options != null && length(v.data_collection_options) > 0 }
+  value       = { for k, v in azurerm_oracle_cloud_vm_cluster.oracle_cloud_vm_clusters : k => one(v.data_collection_options) if v.data_collection_options != null && length(v.data_collection_options) > 0 }
 }
 output "oracle_cloud_vm_clusters_data_storage_percentage" {
   description = "Map of data_storage_percentage values across all oracle_cloud_vm_clusters, keyed the same as var.oracle_cloud_vm_clusters"
